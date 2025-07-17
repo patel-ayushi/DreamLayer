@@ -35,6 +35,10 @@ API_KEY_TO_MODELS = {
             "filename": "stability-sdxl"},
         {"id": "stability-sd-turbo", "name": "Stability SD Turbo",
             "filename": "stability-sd-turbo"}
+    ],
+    "GEMINI_API_KEY": [
+        {"id": "gemini-pro-vision", "name": "Gemini Pro Vision", "filename": "gemini-pro-vision"},
+        {"id": "gemini-pro", "name": "Gemini Pro", "filename": "gemini-pro"},
     ]
 }
 
