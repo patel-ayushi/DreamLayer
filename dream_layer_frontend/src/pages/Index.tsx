@@ -4,6 +4,7 @@ import ModelSelector from '@/components/ModelSelector';
 import TabsNav from '@/components/Navigation/TabsNav';
 import { Txt2ImgPage } from '@/features/Txt2Img';
 import { Img2ImgPage } from '@/features/Img2Img';
+import { Img2TxtPage } from '@/features/Img2Txt';
 import ExtrasPage from '@/features/Extras';
 import { ModelManagerPage } from '@/features/ModelManager';
 import { PNGInfoPage } from '@/features/PNGInfo';
@@ -36,6 +37,8 @@ const Index = () => {
         return <Txt2ImgPage selectedModel={selectedModel} onTabChange={handleTabChange} />;
       case "img2img":
         return <Img2ImgPage selectedModel={selectedModel} onTabChange={handleTabChange} />;
+      case "img2txt":
+        return <Img2TxtPage />;
       case "extras":
         return <ExtrasPage />;
       case "models":
