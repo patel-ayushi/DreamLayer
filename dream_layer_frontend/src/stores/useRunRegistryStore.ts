@@ -20,7 +20,8 @@ export const useRunRegistryStore = create<RunRegistryStore>((set, get) => ({
       const data = await response.json();
       
       if (data.status === 'success' && data.runs) {
-        set({ runs: data.runs, loading: false });
+        const normalizedRuns = data.runs.map((run: any) => ({ ...run, loras: run.loras || [], controlnets: run.controlnets || [] }));
+        set({ runs: normalizedRuns, loading: false });
       } else {
         set({ error: data.message || 'Failed to fetch runs', loading: false });
       }

@@ -129,6 +129,8 @@ cleanup() {
     kill_port 5002  # Flask (dream_layer)
     kill_port 5003  # Extras server
     kill_port 5004  # img2img server
+    kill_port 5005  # Run registry server
+    kill_port 5006  # Report bundle server
     kill_port 8080  # Vite dev server
     
     print_success "Cleanup completed"
@@ -180,6 +182,8 @@ main() {
     kill_port 5002  # Flask (dream_layer)
     kill_port 5003  # Extras server
     kill_port 5004  # img2img server
+    kill_port 5005  # Run registry server
+    kill_port 5006  # Report bundle server
     kill_port 8080  # Vite dev server
     
     # Wait for ports to be freed
@@ -199,6 +203,12 @@ main() {
     
     # Start extras.py
     start_python_server "extras" "extras.py" 5003
+    
+    # Start run_registry.py
+    start_python_server "run_registry" "run_registry.py" 5005
+    
+    # Start report_bundle.py
+    start_python_server "report_bundle" "report_bundle.py" 5006
     
     # Start frontend
     print_status "Starting frontend development server..."
@@ -234,6 +244,8 @@ main() {
     print_status "  - txt2img server: http://localhost:5001"
     print_status "  - img2img server: http://localhost:5004"
     print_status "  - Extras server: http://localhost:5003"
+    print_status "  - Run registry server: http://localhost:5005"
+    print_status "  - Report bundle server: http://localhost:5006"
     print_status "  - Frontend: http://localhost:8080"
     print_status "  - ComfyUI: http://localhost:8188"
     
